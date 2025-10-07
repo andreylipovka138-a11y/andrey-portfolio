@@ -1,0 +1,438 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(135deg, #3dee46, #00d4ff);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #f3300d;
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project {
+    background: #baeea013;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+a {
+  color: #6aef8b;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+  color: #31ea4c;
+  text-shadow: 0 0 5px rgba(229, 234, 240, 0.6);
+}
+
+/* Для кнопок */
+button, .btn {
+  background: #ff8c00;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover, .btn:hover {
+  background: #e46912;
+  transform: scale(1.05);
+}
+
+/* В тёмной теме */
+body.dark a:hover {
+  color: #66aaff;
+  text-shadow: 0 0 6px rgba(102, 170, 255, 0.8);
+}
+
+body.dark button:hover, body.dark .btn:hover {
+  background: #3388ff;
+}
+
+/* 🎨 Hover-эффекты для галереи */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+  cursor: pointer;
+}
+
+/* При наведении — фото чуть увеличивается и становится контрастнее */
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  filter: brightness(0.9);
+}
+
+/* 🌙 Тёмная тема */
+body.dark .gallery img:hover {
+  filter: brightness(1.2);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #0078ff;
+    color: white;
+}
+/* ✨ Анимации появления */
+section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* 📱 Адаптация под телефон */
+@media (max-width: 600px) {
+    header {
+        padding: 40px 10px;
+        font-size: 18px;
+    }
+
+    section {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .project-list {
+        grid-template-columns: 1fr;
+    }
+}
+section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.gallery img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+}
+#slider {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.slider {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.slides img {
+  width: 100%;
+  display: none;
+}
+
+.slides img.active {
+  display: block;
+}
+
+.slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: rgb(239, 76, 76);
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.slider button:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+/* Галерея */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.gallery img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Лайтбокс */
+.lightbox {
+  display: none; /* скрыт по умолчанию */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+/* Кнопки навигации в лайтбоксе */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.arrow:hover {
+  background: rgba(219, 233, 228, 0.5);
+}
+
+.arrow.left {
+  left: 30px;
+}
+
+.arrow.right {
+  right: 30px;
+}
+/* Анимация перелистывания */
+.lightbox-content {
+  transition: opacity 4s ease, transform 4s ease;
+  opacity: 1;
+}
+
+.lightbox-content.fade-out {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.lightbox-content.fade-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+.about-container {
+  display: flex;
+  align-items: center; /* выравнивает фото и текст по вертикали */
+  gap: 20px; /* расстояние между фото и текстом */
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* делает фото круглым */
+  object-fit: cover; /* чтобы фото не растягивалось */
+}
+
+.about p {
+  max-width: 600px; /* чтобы текст не был слишком широким */
+  line-height: 1.6;
+}
+#toTopBtn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 100;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #007bff, #00aaff);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+#toTopBtn.show {
+  display: flex;
+  opacity: 1;
+}
+
+#toTopBtn:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, #0056b3, #0088cc);
+}
+/* ====== Переключатель темы ====== */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  z-index: 200;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.switch input { display: none; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #ccc;
+  border-radius: 26px;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px; width: 20px;
+  left: 3px; bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #007bff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* ====== Темные стили ====== */
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark .card, 
+body.dark section {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+body.dark a {
+  color: #4da6ff;
+}
+/* Светлая версия */
+.projects {
+  background-color: #f5f5f5; /* светлый фон */
+  color: #222; /* тёмный текст */
+  padding: 40px 20px;
+  border-radius: 12px;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Тёмная версия */
+body.dark .projects {
+  background-color: #1e1e1e; /* тёмный фон */
+  color: #f0f0f0; /* светлый текст */
+}
