@@ -7,10 +7,14 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, #3dee46, #00d4ff);
-    color: white;
-    text-align: center;
-    padding: 60px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: url('images/banner.PNG') no-repeat center center / cover;
+  color: #fff;
+  padding: 100px;
+  height: 350px; /* регулируй высоту баннера */
+  position: relative;
 }
 
 section {
@@ -106,10 +110,12 @@ body.dark .gallery img:hover {
 
 footer {
     text-align: center;
-    padding: 20px;
-    background: #0078ff;
+    padding: 40px;
+    height: 200px; /* регулируй высоту баннера */
+   background: url('images/baner.JPG') no-repeat center center / cover;
     color: white;
 }
+
 /* ✨ Анимации появления */
 section {
     opacity: 0;
@@ -436,3 +442,4 @@ body.dark .projects {
   background-color: #1e1e1e; /* тёмный фон */
   color: #f0f0f0; /* светлый текст */
 }
+
